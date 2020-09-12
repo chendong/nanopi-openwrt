@@ -30,7 +30,7 @@ jobs:
       - name: Clone Source
         run: |
           git clone https://github.com/project-openwrt/openwrt --depth=1 -b openwrt-18.06-k5.4
-          git clone https://github.com/openwrt/openwrt --depth=1 oopenwrt
+          #git clone https://github.com/openwrt/openwrt --depth=1 oopenwrt
           #cd oopenwrt && echo 'package/boot/arm-trusted-firmware-rockchip
           #package/boot/uboot-rockchip
           #target/linux/rockchip
@@ -55,7 +55,7 @@ jobs:
         id: assemble_artifact
         run: |
           #gzip openwrt/bin/targets/*/*/*img*
-          mv openwrt/bin/targets/*/*/*img.gz ./artifact.img.gz
+          mv openwrt/bin/targets/*/*/*squashfs*img.gz ./artifact.img.gz
           release_tag="R2S-native-$(date +%Y-%m-%d)-dev"
           echo "##[set-output name=release_tag;]$release_tag"
       - name: Create Release
