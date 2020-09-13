@@ -11,7 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    if: github.repository == 'chendong/nanopi-openwrt'
+        github.repository = 'klever1988/nanopi-openwrt'
 
     steps:
 
